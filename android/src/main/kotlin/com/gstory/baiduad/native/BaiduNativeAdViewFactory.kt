@@ -2,7 +2,6 @@ package com.gstory.baiduad.native
 
 import android.app.Activity
 import android.content.Context
-import com.gstory.baiduad.banner.BaiduBannerAdView
 import io.flutter.plugin.common.BinaryMessenger
 import io.flutter.plugin.common.StandardMessageCodec
 import io.flutter.plugin.platform.PlatformView

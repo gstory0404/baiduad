@@ -32,7 +32,7 @@
 }
 @end
 
-@interface BaiduAdNativeView()<BaiduMobAdNativeAdDelegate>
+@interface BaiduAdNativeView()<BaiduMobAdNativeAdDelegate,BaiduMobAdNativeInterationDelegate>
 @property(nonatomic,strong) BaiduMobAdNative *nativeAd;
 @property(nonatomic,strong) UIView *container;
 @property(nonatomic,assign) NSInteger viewId;
@@ -69,7 +69,7 @@
     //load横幅
     [self.container removeFromSuperview];
     self.nativeAd = [[BaiduMobAdNative alloc] init];
-    self.nativeAd.delegate = self;
+    self.nativeAd.adDelegate = self;
     if([BaiduStringUtil isStringEmpty:self.appSid]){
         self.nativeAd.publisherId = [BaiduAdManager sharedInstance].getAppId;
     }else{
@@ -86,13 +86,14 @@
 //请求成功的BaiduMobAdNativeAdObject数组
 //如果是优选模板，nativeAds为BaiduMobAdExpressNativeView数组
 - (void)nativeAdObjectsSuccessLoad:(NSArray *)nativeAds nativeAd:(BaiduMobAdNative *)nativeAd{
-    [[BaiduLogUtil sharedInstance] print:(@"信息流广告请求成功")];
-    for (int i = 0; i < nativeAds.count; i++){
-        BaiduMobAdExpressNativeView *view = [nativeAds objectAtIndex:i];
+    [[BaiduLogUtil sharedInstance] print:([NSString stringWithFormat:@"信息流广告请求成功%d",nativeAds.count])];
+    if(nativeAds.count > 0){
+        BaiduMobAdExpressNativeView *view = [nativeAds objectAtIndex:0];
         // 展现前检查是否过期，30分钟广告将过期，如果广告过期，请放弃展示并重新请求
         if ([view isExpired]) {
-            continue;
+            return;
         }
+        view.interationDelegate = self;
         //开始渲染
         [view render];
     }

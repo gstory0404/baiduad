@@ -2,7 +2,6 @@ package com.gstory.baiduad.splash
 
 import android.app.Activity
 import android.content.Context
-import com.gstory.baiduad.banner.BaiduBannerAdView
 import io.flutter.plugin.common.BinaryMessenger
 import io.flutter.plugin.common.StandardMessageCodec
 import io.flutter.plugin.platform.PlatformView
@@ -18,7 +17,7 @@ internal class BaiduSplashAdViewFactory (private val messenger: BinaryMessenger,
     StandardMessageCodec.INSTANCE) {
 
     override fun create(context: Context?, viewId: Int, args: Any?): PlatformView {
-        val params = args as Map<String?, Any?>
+        val params = args as Map<*, *>
         return BaiduSplashAdView(activity,messenger, viewId, params)
     }
 }

@@ -37,6 +37,7 @@
     self.bdInsertAd = [[BaiduMobAdExpressInterstitial alloc]init];
     self.bdInsertAd.adUnitTag = _codeId;
     self.bdInsertAd.delegate = self;
+    self.bdInsertAd.enableLocation = false;
     if([BaiduStringUtil isStringEmpty:self.appSid]){
         self.bdInsertAd.publisherId =[BaiduAdManager sharedInstance].getAppId;
     }else{

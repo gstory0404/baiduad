@@ -2,9 +2,7 @@ package com.gstory.baiduad.splash
 
 import android.app.Activity
 import android.view.View
-import android.view.ViewGroup
 import android.widget.FrameLayout
-import com.baidu.mobads.sdk.api.AdView
 import com.baidu.mobads.sdk.api.RequestParameters
 import com.baidu.mobads.sdk.api.SplashAd
 import com.baidu.mobads.sdk.api.SplashInteractionListener
@@ -23,10 +21,10 @@ import io.flutter.plugin.platform.PlatformView
 class BaiduSplashAdView (var activity: Activity,
                          messenger: BinaryMessenger?,
                          id: Int,
-                         params: Map<String?, Any?>) : PlatformView {
+                         params: Map<*, *>) : PlatformView {
 
     private val TAG = "BannerAdView"
-    private var mContainer: FrameLayout? = null
+    private var mContainer: FrameLayout
     private var splashAd: SplashAd? = null
 
     //广告所需参数
@@ -46,17 +44,18 @@ class BaiduSplashAdView (var activity: Activity,
 
         channel = MethodChannel(messenger!!, "com.gstory.baiduad/SplashAdView_$id")
         mContainer = FrameLayout(activity)
-        mContainer?.layoutParams?.width = width.toInt()
-        mContainer?.layoutParams?.height = height.toInt()
+        mContainer.layoutParams?.width = width.toInt()
+        mContainer.layoutParams?.height = height.toInt()
         loadSplashAd()
     }
 
     override fun getView(): View {
-        return mContainer!!
+        return mContainer
     }
 
     override fun dispose() {
-        mContainer?.removeAllViews()
+        mContainer.removeAllViews()
+        splashAd?.destroy()
     }
 
     private fun loadSplashAd() {
@@ -74,6 +73,7 @@ class BaiduSplashAdView (var activity: Activity,
             SplashInteractionListener {
             override fun onADLoaded() {
                 BaiduLogUtil.d("$TAG 开屏广告请求成功")
+                splashAd?.show(mContainer)
 
             }
 
@@ -115,6 +115,7 @@ class BaiduSplashAdView (var activity: Activity,
         // 【可选】【Bidding】设置广告的底价，单位：分
 //        splashAd?.setBidFloor(100)
         // 请求并展示广告
-        splashAd?.loadAndShow(mContainer)
+//        splashAd?.loadAndShow(mContainer)
+        splashAd?.load()
     }
 }

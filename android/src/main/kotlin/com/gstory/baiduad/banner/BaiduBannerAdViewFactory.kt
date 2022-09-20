@@ -17,7 +17,7 @@ internal class BaiduBannerAdViewFactory (private val messenger: BinaryMessenger,
     StandardMessageCodec.INSTANCE) {
 
     override fun create(context: Context?, viewId: Int, args: Any?): PlatformView {
-        val params = args as Map<String?, Any?>
+        val params = args as Map<*, *>
         return BaiduBannerAdView(activity,messenger, viewId, params)
     }
 }

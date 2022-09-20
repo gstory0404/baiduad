@@ -23,7 +23,7 @@ import org.json.JSONObject
 class BaiduBannerAdView(var activity: Activity,
                          messenger: BinaryMessenger?,
                          id: Int,
-                         params: Map<String?, Any?>) : PlatformView {
+                         params: Map<*, *>) : PlatformView {
 
     private val TAG = "BannerAdView"
     private var mContainer: FrameLayout? = null

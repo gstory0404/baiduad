@@ -26,3 +26,14 @@
 -keep class android.support.v4.util.LongSparseArray {*;}
 -keep class android.support.v4.util.ArraySet {*;}
 -keep class android.support.v4.view.accessibility.AccessibilityNodeInfoCompat {*;}
+
+#如果接入微信小游戏调起，需按微信要求添加以下keep
+-keep class com.tencent.mm.opensdk.** {
+    *;
+}
+-keep class com.tencent.wxop.** {
+    *;
+}
+-keep class com.tencent.mm.sdk.** {
+    *;
+}
