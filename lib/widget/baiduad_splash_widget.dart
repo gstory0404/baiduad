@@ -31,13 +31,13 @@ class BaiduSplashAdView extends StatefulWidget {
   /// [callBack] 回调 [BaiduAdSplashCallBack]
   const BaiduSplashAdView(
       {Key? key,
-        required this.androidId,
-        required this.iosId,
-        this.appSid,
-        this.timeout,
-        required this.width,
-        required this.height,
-        this.callBack})
+      required this.androidId,
+      required this.iosId,
+      this.appSid,
+      this.timeout,
+      required this.width,
+      required this.height,
+      this.callBack})
       : super(key: key);
 
   @override
@@ -45,7 +45,6 @@ class BaiduSplashAdView extends StatefulWidget {
 }
 
 class _BaiduSplashAdViewState extends State<BaiduSplashAdView> {
-
   String _viewType = "com.gstory.baiduad/SplashAdView";
 
   MethodChannel? _channel;
@@ -103,7 +102,6 @@ class _BaiduSplashAdViewState extends State<BaiduSplashAdView> {
     }
   }
 
-
   //注册cannel
   void _registerChannel(int id) {
     _channel = MethodChannel("${_viewType}_$id");
@@ -114,9 +112,8 @@ class _BaiduSplashAdViewState extends State<BaiduSplashAdView> {
   Future<dynamic> _platformCallHandler(MethodCall call) async {
     print("执行了 ${call.method} ${call.arguments}");
     switch (call.method) {
-    //显示广告
+      //显示广告
       case BaiduAdMethod.onShow:
-        Map map = call.arguments;
         if (mounted) {
           setState(() {
             _isShowAd = true;
@@ -124,7 +121,7 @@ class _BaiduSplashAdViewState extends State<BaiduSplashAdView> {
         }
         widget.callBack?.onShow!();
         break;
-    //广告加载失败
+      //广告加载失败
       case BaiduAdMethod.onFail:
         if (mounted) {
           setState(() {
@@ -134,11 +131,11 @@ class _BaiduSplashAdViewState extends State<BaiduSplashAdView> {
         Map map = call.arguments;
         widget.callBack?.onFail!(map["message"]);
         break;
-    //点击
+      //点击
       case BaiduAdMethod.onClick:
         widget.callBack?.onClick!();
         break;
-    //关闭
+      //关闭
       case BaiduAdMethod.onClose:
         if (mounted) {
           setState(() {
@@ -150,5 +147,3 @@ class _BaiduSplashAdViewState extends State<BaiduSplashAdView> {
     }
   }
 }
-
-
