@@ -1,7 +1,7 @@
 # 百度广告Flutter版本
 
 <p>
-<a href="https://pub.flutter-io.cn/packages/baiduad"><img src=https://img.shields.io/badge/baiduad-v0.0.3-success></a>
+<a href="https://pub.flutter-io.cn/packages/baiduad"><img src=https://img.shields.io/badge/baiduad-v0.0.4-success></a>
 </p>
 
 ## 简介
@@ -31,7 +31,7 @@ baiduad是一款集成了百度广告Android和iOS SDK的Flutter插件
 ## 集成步骤
 #### 1、pubspec.yaml
 ```Dart
-baiduad: ^0.0.3
+baiduad: ^0.0.4
 ```
 引入
 ```Dart

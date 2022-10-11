@@ -28,12 +28,12 @@ class BaiduNativeAdView extends StatefulWidget {
   /// [callBack] 回调 [BaiduAdNativeCallBack]
   const BaiduNativeAdView(
       {Key? key,
-        required this.androidId,
-        required this.iosId,
-        this.appSid,
-        required this.width,
-        required this.height,
-        this.callBack})
+      required this.androidId,
+      required this.iosId,
+      this.appSid,
+      required this.width,
+      required this.height,
+      this.callBack})
       : super(key: key);
 
   @override
@@ -41,7 +41,6 @@ class BaiduNativeAdView extends StatefulWidget {
 }
 
 class _BaiduNativeAdViewState extends State<BaiduNativeAdView> {
-
   String _viewType = "com.gstory.baiduad/NativeAdView";
 
   MethodChannel? _channel;
@@ -55,9 +54,9 @@ class _BaiduNativeAdViewState extends State<BaiduNativeAdView> {
   void initState() {
     super.initState();
     // setState(() {
-      _width = widget.width.toDouble();
-      _height = widget.height.toDouble();
-      _isShowAd = true;
+    _width = widget.width.toDouble();
+    _height = widget.height.toDouble();
+    _isShowAd = true;
     // });
   }
 
@@ -103,7 +102,6 @@ class _BaiduNativeAdViewState extends State<BaiduNativeAdView> {
     }
   }
 
-
   //注册cannel
   void _registerChannel(int id) {
     _channel = MethodChannel("${_viewType}_$id");
@@ -112,9 +110,8 @@ class _BaiduNativeAdViewState extends State<BaiduNativeAdView> {
 
   //监听原生view传值
   Future<dynamic> _platformCallHandler(MethodCall call) async {
-    print("执行了 ${call.method} ${call.arguments}");
     switch (call.method) {
-    //显示广告
+      //显示广告
       case BaiduAdMethod.onShow:
         Map map = call.arguments;
         if (mounted) {
@@ -126,7 +123,7 @@ class _BaiduNativeAdViewState extends State<BaiduNativeAdView> {
         }
         widget.callBack?.onShow!();
         break;
-    //广告加载失败
+      //广告加载失败
       case BaiduAdMethod.onFail:
         if (mounted) {
           setState(() {
@@ -136,11 +133,11 @@ class _BaiduNativeAdViewState extends State<BaiduNativeAdView> {
         Map map = call.arguments;
         widget.callBack?.onFail!(map["message"]);
         break;
-    //点击
+      //点击
       case BaiduAdMethod.onClick:
         widget.callBack?.onClick!();
         break;
-    //关闭
+      //关闭
       case BaiduAdMethod.onClose:
         if (mounted) {
           setState(() {
@@ -152,5 +149,3 @@ class _BaiduNativeAdViewState extends State<BaiduNativeAdView> {
     }
   }
 }
-
-

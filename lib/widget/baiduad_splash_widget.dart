@@ -110,7 +110,6 @@ class _BaiduSplashAdViewState extends State<BaiduSplashAdView> {
 
   //监听原生view传值
   Future<dynamic> _platformCallHandler(MethodCall call) async {
-    print("执行了 ${call.method} ${call.arguments}");
     switch (call.method) {
       //显示广告
       case BaiduAdMethod.onShow:
