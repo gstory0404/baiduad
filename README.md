@@ -5,7 +5,7 @@
 </p>
 
 ## 简介
-baiduad是一款集成了百度广告Android和iOS SDK的Flutter插件
+baiduad是一款集成了百度广告Android和iOS SDK的Flutter插件，可通过[GTAds](https://github.com/gstory0404/GTAds)实现多个广告平台接入、统一管理。
 
 ## 官方文档
 * [Android](https://union.baidu.com/miniappblog/2020/12/01/newAndroidSDK/)
