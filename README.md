@@ -1,4 +1,4 @@
-# 百度广告Flutter版本
+# 百度百青藤广告Flutter版本
 
 <p>
 <a href="https://pub.flutter-io.cn/packages/baiduad"><img src=https://img.shields.io/badge/baiduad-v0.0.4-success></a>
