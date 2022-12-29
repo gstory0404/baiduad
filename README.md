@@ -1,7 +1,11 @@
 # 百度百青藤广告Flutter版本
 
 <p>
-<a href="https://pub.flutter-io.cn/packages/baiduad"><img src=https://img.shields.io/badge/baiduad-v0.0.4-success></a>
+<a href="https://pub.flutter-io.cn/packages/baiduad"><img src=https://img.shields.io/pub/v/baiduad?color=orange></a>
+<a href="https://pub.flutter-io.cn/packages/baiduad"><img src=https://img.shields.io/pub/likes/baiduad></a>
+<a href="https://pub.flutter-io.cn/packages/baiduad"><img src=https://img.shields.io/pub/points/baiduad></a>
+<a href="https://github.com/gstory0404/baiduad/commits"><img src=https://img.shields.io/github/last-commit/gstory0404/baiduad></a>
+<a href="https://github.com/gstory0404/baiduad"><img src=https://img.shields.io/github/stars/gstory0404/baiduad></a>
 </p>
 
 ## 简介
