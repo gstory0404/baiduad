@@ -50,22 +50,9 @@ android {
         versionName flutterVersionName
     }
 
-    signingConfigs {
-        config {
-            storeFile file("..\\gstory.jks")
-            storePassword "123456"
-            keyAlias "gstory"
-            keyPassword "123456"
-        }
-    }
-
     buildTypes {
         release {
-            minifyEnabled true
-            zipAlignEnabled true
-            shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
+            signingConfig signingConfigs.debug
         }
     }
 }

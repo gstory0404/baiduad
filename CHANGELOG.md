@@ -1,3 +1,6 @@
+## 0.0.6
+* android 混淆优化
+
 ## 0.0.5
 * fix bug
 * android sdk升级9.3
