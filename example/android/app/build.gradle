@@ -44,15 +44,28 @@ android {
 
     defaultConfig {
         applicationId "com.hnnuomi.atree"
-        minSdkVersion flutter.minSdkVersion
+        minSdkVersion 24
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
 
+    signingConfigs {
+        config {
+            storeFile file("..\\gstory.jks")
+            storePassword "123456"
+            keyAlias "gstory"
+            keyPassword "123456"
+        }
+    }
+
     buildTypes {
         release {
-            signingConfig signingConfigs.debug
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
 }

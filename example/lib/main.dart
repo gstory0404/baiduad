@@ -98,14 +98,6 @@ class _HomePageState extends State<HomePage> {
 
   //注册
   void _initRegister() async {
-    _isRegister = await Baiduad.register(
-      //百青藤广告 Android appid 必填
-      androidAppId: "b423d90d",
-      //百青藤广告 ios appid 必填
-      iosAppId: "a6b7fed6",
-      //是否打印日志 发布时改为false
-      debug: true,
-    );
     //隐私敏感权限API&限制个性化广告推荐
     await Baiduad.privacy(
       //android读取设备ID的权限（建议授权）  ios是否新的设备标志能力
@@ -120,6 +112,14 @@ class _HomePageState extends State<HomePage> {
       personalAds: false,
       // ios 新标志能力，该能力默认开启，如果有监管或隐私要求，在app内配置是否开启该能力。
       bDPermission: false,
+    );
+    _isRegister = await Baiduad.register(
+      //百青藤广告 Android appid 必填
+      androidAppId: "b423d90d",
+      //百青藤广告 ios appid 必填
+      iosAppId: "a6b7fed6",
+      //是否打印日志 发布时改为false
+      debug: true,
     );
     _sdkVersion = await Baiduad.getSDKVersion();
     setState(() {});

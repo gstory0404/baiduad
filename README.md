@@ -9,9 +9,11 @@
 </p>
 
 ## 简介
+
 baiduad是一款集成了百度广告Android和iOS SDK的Flutter插件，可通过[GTAds](https://github.com/gstory0404/GTAds)实现多个广告平台接入、统一管理。
 
 ## 官方文档
+
 * [Android](https://union.baidu.com/miniappblog/2020/12/01/newAndroidSDK/)
 * [IOS](https://union.baidu.com/miniappblog/2020/08/11/iOSSDK/)
 
@@ -20,24 +22,30 @@ baiduad是一款集成了百度广告Android和iOS SDK的Flutter插件，可通�
 [更新日志](https://github.com/gstory0404/baiduad/blob/master/CHANGELOG.md)
 
 ## 本地开发环境
+
 ```
-[✓] Flutter (Channel stable, 3.0.4, on macOS 12.5 21G72 darwin-x64, locale zh-Hans-CN)
-[✓] Android toolchain - develop for Android devices (Android SDK version 33.0.0-rc1)
-[✓] Xcode - develop for iOS and macOS (Xcode 13.4.1)
+[✓] Flutter (Channel stable, 3.10.5, on macOS 13.4 22F66 darwin-x64, locale
+    zh-Hans-CN)
+[✓] Android toolchain - develop for Android devices (Android SDK version 33.0.1)
+[✓] Xcode - develop for iOS and macOS (Xcode 14.3.1)
 [✓] Chrome - develop for the web
-[✓] Android Studio (version 2021.2)
-[✓] IntelliJ IDEA Ultimate Edition (version 2022.1.1)
-[✓] VS Code (version 1.69.2)
-[✓] Connected device (3 available)
-[✓] HTTP Host Availability
+[✓] Android Studio (version 2022.1)
+[✓] IntelliJ IDEA Ultimate Edition (version 2023.1.2)
+[✓] VS Code (version 1.79.0)
+[✓] Connected device (4 available)
+[✓] Network resources
 ```
 
 ## 集成步骤
+
 #### 1、pubspec.yaml
+
 ```Dart
-baiduad: ^0.0.4
+baiduad: ^latest
 ```
+
 引入
+
 ```Dart
 import 'package:baiduad/baiduad.dart';
 ```
@@ -45,6 +53,7 @@ import 'package:baiduad/baiduad.dart';
 ## 使用
 
 #### 1、SDK初始化
+
 ```Dart
 await Baiduad.register(
     //百青藤广告 Android appid 必填
@@ -55,12 +64,15 @@ await Baiduad.register(
     debug: true,
 );
 ```
+
 #### 2、获取SDK版本
+
 ```Dart
 await Baiduad.getSDKVersion();
 ```
 
 #### 3、隐私权限
+
 ```dart
 //隐私敏感权限API&限制个性化广告推荐
     await Baiduad.privacy(
@@ -80,6 +92,7 @@ await Baiduad.getSDKVersion();
 ```
 
 #### 4、开屏广告
+
 ```Dart
 BaiduSplashAdView(
     //android广告位id
@@ -113,6 +126,7 @@ BaiduSplashAdView(
 ```
 
 #### 5、banner广告
+
 ```Dart
 BaiduBannerAdView(
     //android广告位id
@@ -174,7 +188,9 @@ BaiduNativeAdView(
 ```
 
 #### 7、激励视频广告
+
 预加载激励视频广告
+
 ```Dart
 await Baiduad.loadRewardAd(
     //android广告id
@@ -199,10 +215,13 @@ await Baiduad.loadRewardAd(
     useRewardCountdown: true,
 );
 ```
+
 显示激励视频广告
+
 ```dart
   await Baiduad.showRewardVideoAd();
 ```
+
 监听激励视频结果
 
 ```Dart
@@ -240,7 +259,9 @@ await Baiduad.loadRewardAd(
 ```
 
 #### 7、插屏广告（智选模版）
+
 预加载插屏广告
+
 ```Dart
 await Baiduad.loadInterstitialAd(
     //android广告位id
@@ -249,10 +270,13 @@ await Baiduad.loadInterstitialAd(
     iosId: "8351686",
 );
 ```
+
 显示插屏广告
+
 ```dart
 await Baiduad.showInterstitialAd();
 ```
+
 监听插屏广告
 
 ```Dart
@@ -284,32 +308,27 @@ await Baiduad.showInterstitialAd();
 
 ## 插件链接
 
-|插件|地址|
-|:----|:----|
-|字节-穿山甲广告插件|[flutter_unionad](https://github.com/gstory0404/flutter_unionad)|
-|腾讯-优量汇广告插件|[flutter_tencentad](https://github.com/gstory0404/flutter_tencentad)|
-|百度-百青藤广告插件|[baiduad](https://github.com/gstory0404/baiduad)|
-|字节-Gromore聚合广告|[gromore](https://github.com/gstory0404/gromore)|
-|Sigmob广告|[sigmobad](https://github.com/gstory0404/sigmobad)|
-|聚合广告插件(迁移至GTAds)|[flutter_universalad](https://github.com/gstory0404/flutter_universalad)|
-|GTAds聚合广告|[GTAds](https://github.com/gstory0404/GTAds)|
-|字节穿山甲内容合作插件|[flutter_pangrowth](https://github.com/gstory0404/flutter_pangrowth)|
-|文档预览插件|[file_preview](https://github.com/gstory0404/file_preview)|
-|滤镜|[gpu_image](https://github.com/gstory0404/gpu_image)|
+
+| 插件                      | 地址                                                                     |
+| :------------------------ | :----------------------------------------------------------------------- |
+| 字节-穿山甲广告插件       | [flutter_unionad](https://github.com/gstory0404/flutter_unionad)         |
+| 腾讯-优量汇广告插件       | [flutter_tencentad](https://github.com/gstory0404/flutter_tencentad)     |
+| 百度-百青藤广告插件       | [baiduad](https://github.com/gstory0404/baiduad)                         |
+| 字节-Gromore聚合广告      | [gromore](https://github.com/gstory0404/gromore)                         |
+| Sigmob广告                | [sigmobad](https://github.com/gstory0404/sigmobad)                       |
+| 聚合广告插件(迁移至GTAds) | [flutter_universalad](https://github.com/gstory0404/flutter_universalad) |
+| GTAds聚合广告             | [GTAds](https://github.com/gstory0404/GTAds)                             |
+| 字节穿山甲内容合作插件    | [flutter_pangrowth](https://github.com/gstory0404/flutter_pangrowth)     |
+| 文档预览插件              | [file_preview](https://github.com/gstory0404/file_preview)               |
+| 滤镜                      | [gpu_image](https://github.com/gstory0404/gpu_image)                     |
 
 ### 开源不易，觉得有用的话可以请作者喝杯奶茶🧋
+
 <img src="https://github.com/gstory0404/flutter_unionad/blob/master/image/weixin.jpg" width = "200" height = "160" alt="打赏"/>
 
-
 ## 联系方式
+
 * Email: gstory0404@gmail.com
 * blog：https://www.gstory.cn/
-
 * QQ群: <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=4j2_yF1-pMl58y16zvLCFFT2HEmLf6vQ&jump_from=webapi"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="649574038" title="flutter交流"></a>
 * [Telegram](https://t.me/flutterex)
-
-
-
-
-
-

@@ -14,7 +14,7 @@
 -keep class com.component.** {*;}
 -keep class com.baidu.ad.magic.flute.** {*;}
 -keep class com.baidu.mobstat.forbes.** {*;}
-#9.22版本新增加混淆
+#9.22版本新增加混淆，9.25版本不再要求
 -keep class android.support.v7.widget.RecyclerView {*;}
 -keepnames class android.support.v7.widget.RecyclerView$* {
     public <fields>;

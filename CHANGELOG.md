@@ -1,3 +1,8 @@
+## 0.0.5
+* fix bug
+* android sdk升级9.3
+* iOS sdk升级5.301
+
 ## 0.0.4
 * fix bug
 * android sdk升级9.241

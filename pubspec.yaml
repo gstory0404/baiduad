@@ -1,10 +1,10 @@
 name: baiduad
 description: 百度广告flutter版本
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/gstory0404/baiduad
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.12.0 <4.0.0"
   flutter: ">=1.20.0"
 
 dependencies:
