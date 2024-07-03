@@ -28,9 +28,9 @@ class _BannerPageState extends State<BannerPage> {
             //ios广告位id
             iosId: "8280989",
             //广告宽 推荐您将Banner的宽高比固定为20：3以获得最佳的广告展示效果
-            width: 400,
+            width: 280,
             //广告高 加载完成后会自动修改为sdk返回广告高
-            height: 60,
+            height: 120,
             //是否自动切换
             autoplay: true,
             //广告回调
@@ -52,14 +52,14 @@ class _BannerPageState extends State<BannerPage> {
           BaiduBannerAdView(
             androidId: "7804504",
             iosId: "8360367",
-            width: 200, //推荐您将Banner的宽高比固定为20：3以获得最佳的广告展示效果
-            height: 30,
+            width: 640, //推荐您将Banner的宽高比固定为7：3以获得最佳的广告展示效果
+            height: 270,
           ),
           BaiduBannerAdView(
             androidId: "7804504",
             iosId: "8360367",
-            width: 200, //推荐您将Banner的宽高比固定为20：3以获得最佳的广告展示效果
-            height: 30,
+            width: 640, //推荐您将Banner的宽高比固定为20：3以获得最佳的广告展示效果
+            height: 270,
           ),
         ],
       ),

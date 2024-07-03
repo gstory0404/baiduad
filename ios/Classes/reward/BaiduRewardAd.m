@@ -54,7 +54,6 @@
         self.reward.publisherId =self.appSid;
     }
     
-    self.reward.useRewardCountdown = self.useRewardCountdown;
     self.reward.userID = self.userId;
     self.reward.extraInfo = self.customData;
     [self.reward load];

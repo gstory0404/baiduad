@@ -1,5 +1,6 @@
 package com.gstory.baiduad.reward
 
+import android.annotation.SuppressLint
 import android.content.Context
 import com.baidu.mobads.sdk.api.RewardVideoAd
 import com.gstory.baiduad.BaiduAdEventPlugin
@@ -40,12 +41,11 @@ object BaiduRewardAd : RewardVideoAd.RewardVideoAdListener {
         loadRewardVideoAd()
     }
 
+    @SuppressLint("StaticFieldLeak")
     private fun loadRewardVideoAd() {
         rewardVideoAd = RewardVideoAd(context, codeId, this, useSurfaceView!!)
         //设置点击跳过时是否展示提示弹框
         rewardVideoAd?.setShowDialogOnSkip(isShowDialog!!)
-        //设置是否展示奖励领取倒计时提示
-        rewardVideoAd?.setUseRewardCountdown(useRewardCountdown!!)
         //设置用户id
         rewardVideoAd?.setUserId(userId)
         //设置自定义参数

@@ -61,7 +61,9 @@ class BaiduBannerAdView(var activity: Activity,
 
     private fun loadBannerAd() {
         mContainer?.removeAllViews()
-        adView = AdView(activity, null, autoplay, AdSize.Banner, codeId)
+        adView = AdView(activity, codeId)
+//        adView = AdView(activity, null, autoplay, AdSize.Banner, codeId)
+        adView?.layoutParams = ViewGroup.LayoutParams(width.toInt(),height.toInt())
         //支持动态设置APPSID，该信息可从移动联盟获得
         if (!appSid.isNullOrEmpty()) {
             adView?.setAppSid(appSid)

@@ -92,9 +92,17 @@ class BaiduSplashAdView (var activity: Activity,
                 channel.invokeMethod("onShow", "")
             }
 
+            override fun onAdExposed() {
+                BaiduLogUtil.d("$TAG 开屏广告曝光")
+            }
+
             override fun onAdDismissed() {
                 BaiduLogUtil.d("$TAG 开屏广告关闭")
                 channel.invokeMethod("onClose", "")
+            }
+
+            override fun onAdSkip() {
+                BaiduLogUtil.d("$TAG 开屏广告跳过")
             }
 
             override fun onAdClick() {

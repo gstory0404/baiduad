@@ -74,15 +74,18 @@ class BaiduNativeAdView(
                     }
                 }
 
-                override fun onNativeFail(p0: Int, p1: String?) {
+                override fun onNativeFail(p0: Int, p1: String?, p2: ExpressResponse?) {
                     BaiduLogUtil.d("$TAG 信息流广告请求失败 $p0 $p1")
                     var map: MutableMap<String, Any?> =
                         mutableMapOf("code" to 0, "message" to "$p0  $p1")
                     channel.invokeMethod("onFail", map)
                 }
 
-                override fun onNoAd(p0: Int, p1: String?) {
-                    BaiduLogUtil.d("$TAG 信息流无广告返回")
+                override fun onNoAd(p0: Int, p1: String?, p2: ExpressResponse?) {
+                    BaiduLogUtil.d("$TAG 信息流广告未获取到广告 $p0 $p1")
+                    var map: MutableMap<String, Any?> =
+                        mutableMapOf("code" to 0, "message" to "$p0  $p1")
+                    channel.invokeMethod("onFail", map)
                 }
 
                 override fun onVideoDownloadSuccess() {
@@ -135,6 +138,10 @@ class BaiduNativeAdView(
         response.setAdPrivacyListener(object : ExpressAdDownloadWindowListener {
             override fun onADPrivacyClick() {
                 BaiduLogUtil.d("$TAG 信息流广告下载广告 隐私声明点击回调")
+            }
+
+            override fun onADFunctionClick() {
+                BaiduLogUtil.d("$TAG 信息流广告下载广告 兴趣点击回调")
             }
 
             override fun onADPermissionShow() {
