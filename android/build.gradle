@@ -52,5 +52,6 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation(name: 'Baidu_MobAds_SDK-release_v9.352', ext: 'aar')
+    implementation(name: 'Baidu_MobAds_SDK-release_v9.371', ext: 'aar')
+//    implementation 'mobi.baidu.sdk:mobads:9.371.2'
 }

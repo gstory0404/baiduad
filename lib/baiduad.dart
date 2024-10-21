@@ -8,7 +8,6 @@ import 'package:flutter/services.dart';
 part 'baiduad_callback.dart';
 part 'baiduad_code.dart';
 part 'baiduad_stream.dart';
-part 'widget/baiduad_banner_widget.dart';
 part 'widget/baiduad_native_widget.dart';
 part 'widget/baiduad_splash_widget.dart';
 

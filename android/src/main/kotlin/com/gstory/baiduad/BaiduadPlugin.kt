@@ -8,7 +8,6 @@ import com.baidu.mobads.sdk.api.AdSettings
 import com.baidu.mobads.sdk.api.BDAdConfig
 import com.baidu.mobads.sdk.api.BDDialogParams
 import com.baidu.mobads.sdk.api.MobadsPermissionSettings
-import com.gstory.baiduad.banner.BaiduBannerAdViewFactory
 import com.gstory.baiduad.interstitial.BaiduInterstitialAd
 import com.gstory.baiduad.native.BaiduNativeAdViewFactory
 import com.gstory.baiduad.reward.BaiduRewardAd
@@ -33,10 +32,10 @@ class BaiduadPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
     override fun onAttachedToActivity(binding: ActivityPluginBinding) {
         mActivity = binding.activity
         //注册横幅广告
-        mFlutterPluginBinding?.platformViewRegistry?.registerViewFactory(
-            "com.gstory.baiduad/BannerAdView",
-            BaiduBannerAdViewFactory(mFlutterPluginBinding?.binaryMessenger!!, mActivity!!)
-        )
+//        mFlutterPluginBinding?.platformViewRegistry?.registerViewFactory(
+//            "com.gstory.baiduad/BannerAdView",
+//            BaiduBannerAdViewFactory(mFlutterPluginBinding?.binaryMessenger!!, mActivity!!)
+//        )
         //注册信息流广告
         mFlutterPluginBinding?.platformViewRegistry?.registerViewFactory(
             "com.gstory.baiduad/NativeAdView",

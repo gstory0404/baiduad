@@ -6,7 +6,6 @@
 #import "BaiduLogUtil.h"
 #import "BaiduRewardAd.h"
 #import "BaiduInterstitialAd.h"
-#import "BaiduAdBannerView.h"
 #import "BaiduAdNativeView.h"
 #import "BaiduAdSplashView.h"
 
@@ -19,8 +18,6 @@
     [registrar addMethodCallDelegate:instance channel:channel];
     //注册event
     [[BaiduAdEvent sharedInstance]  initEvent:registrar];
-    //注册banner
-    [registrar registerViewFactory:[[BaiduAdBannerViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"com.gstory.baiduad/BannerAdView"];
     //注册信息流
     [registrar registerViewFactory:[[BaiduAdNativeViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"com.gstory.baiduad/NativeAdView"];
     //注册开屏

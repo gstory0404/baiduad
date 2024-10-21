@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:baiduad/baiduad.dart';
-import 'package:baiduad_example/banner_page.dart';
 import 'package:baiduad_example/native_page.dart';
 import 'package:baiduad_example/splash_page.dart';
 import 'package:flutter/material.dart';
@@ -179,22 +178,6 @@ class _HomePageState extends State<HomePage> {
                       androidId: "8351686",
                       //ios广告位id
                       iosId: "7803486",
-                    );
-                  },
-                ),
-                //横幅广告
-                MaterialButton(
-                  color: Colors.blue,
-                  textColor: Colors.white,
-                  child: const Text('横幅广告'),
-                  onPressed: () async {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) {
-                          return const BannerPage();
-                        },
-                      ),
                     );
                   },
                 ),
