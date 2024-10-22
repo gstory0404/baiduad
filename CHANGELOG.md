@@ -1,3 +1,7 @@
+## 0.0.7
+* android sdk升级9.371
+* ios sdk升级5.371
+
 ## 0.0.6
 * android 混淆优化
 
