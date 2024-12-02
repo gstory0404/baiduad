@@ -28,6 +28,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
+    namespace = "com.gstory.baiduad"
     compileSdkVersion 31
 
     compileOptions {
