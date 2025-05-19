@@ -39,7 +39,7 @@ class _SplashPageState extends State<SplashPage> {
           },
           onFail: (message) {
             print("开屏广告失败了 $message");
-            Navigator.pop(context);
+            // Navigator.pop(context);
           },
           onClose: () {
             print("开屏广告关闭了");

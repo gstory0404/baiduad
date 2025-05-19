@@ -1,3 +1,7 @@
+## 0.0.9
+* android sdk升级9.3912
+* ios sdk升级5.391
+
 ## 0.0.8
 * android增加namespace
 

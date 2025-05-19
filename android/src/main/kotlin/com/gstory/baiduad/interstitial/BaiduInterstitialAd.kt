@@ -1,5 +1,6 @@
 package com.gstory.baiduad.interstitial
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import com.baidu.mobads.sdk.api.ExpressInterstitialAd
 import com.baidu.mobads.sdk.api.ExpressInterstitialListener
@@ -12,6 +13,7 @@ import com.gstory.baiduad.utils.BaiduLogUtil
  * @Description: 模版插屏广告
  */
 
+@SuppressLint("StaticFieldLeak")
 object BaiduInterstitialAd : ExpressInterstitialListener {
 
     private val TAG = "InterstitialAd"
@@ -96,16 +98,6 @@ object BaiduInterstitialAd : ExpressInterstitialListener {
 
     override fun onAdCacheFailed() {
         BaiduLogUtil.d("$TAG  模版插屏视频缓存失败")
-    }
-
-    //	视频缓存成功
-    override fun onVideoDownloadSuccess() {
-        BaiduLogUtil.d("$TAG  模版插屏视频下载成功")
-    }
-
-    //	视频缓存失败
-    override fun onVideoDownloadFailed() {
-        BaiduLogUtil.d("$TAG  模版插屏视频下载失败")
     }
 
     override fun onLpClosed() {
