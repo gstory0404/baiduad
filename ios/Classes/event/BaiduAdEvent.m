@@ -25,7 +25,9 @@
     [eventChannel setStreamHandler:self];
 }
 -(void)sentEvent:(NSDictionary*)arguments{
-    self.eventSink(arguments);
+    if(self.eventSink != nil){
+        self.eventSink(arguments);
+    }
 }
 #pragma mark - FlutterStreamHandler
 - (FlutterError * _Nullable)onCancelWithArguments:(id _Nullable)arguments {
